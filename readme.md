@@ -50,6 +50,16 @@ end
 .
 ```
 
+please test your program with
+
+`make test`
+
+to test if it works.
+
+do not consider the homework done before you get `(:` symbol on the as the output of `make test`.
+
+even if you got `(:` as the output of `make test` it does not mean your compiler will pass other tests successfully.
+
 or it may contain the program that doesn't look gramatically correct:
 
 ```
