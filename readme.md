@@ -118,31 +118,41 @@ your program consists of two parts:
 * the actual scanner. may contain a function GetSym() which returns a next terminal.
 * the function that calls GetSym() in a loop, unless there is no remaining symbols in the file.
 
-the known lexems are, one on a line:
-```
-identifier = string, first character of which is a letter, other characters - letter or number.
+the known lexems are:
+
+identifier
+
+identifier is a string, first character of which is a letter, other characters can be letters or numbers.
 
 in EBNF we would write it as
+```
     letter   = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" .
     digit    = "0123456789".
  identifier  =  letter { letter | digit } .
+```
 
+number
 
+number is a string that only consists of digits.
 
 in EBNF we can represent the number as follows:
-
+```
  number  =  digit { digit }
+```
+
+literal string
+
+that is a string enclosed with double quote symbol.
 
 in EBNF we can represent the string as follows:
 
-
-string enclosed with double quote symbol.
-integer number.  
-
+```
 noQuote  = ANY - '"' - eol  .
  string  =  '"' { noQuote } '"' .
+```
 
-
+rest of the lexems, one per line:
+```
 *
 &
 +
